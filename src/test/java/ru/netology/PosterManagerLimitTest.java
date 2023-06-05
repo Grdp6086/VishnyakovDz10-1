@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 public class PosterManagerLimitTest {
 
 
-
     DataClass movie1 = new DataClass("Матрица", "Боевик", "1999");
     DataClass movie2 = new DataClass("Матрица: Перезагрузка", "Боевик", "2003");
     DataClass movie3 = new DataClass("Матрица: Революция", "Боевик", "2003");
@@ -23,7 +22,7 @@ public class PosterManagerLimitTest {
 
 
     @Test
-    public void shouldReversUnderLimit(){
+    public void shouldReversUnderLimit() {
         PosterManager managerLimit = new PosterManager(-1);
         managerLimit.saveMovies(movie1);
         managerLimit.saveMovies(movie2);
@@ -38,14 +37,27 @@ public class PosterManagerLimitTest {
         managerLimit.saveMovies(movie11);
         managerLimit.saveMovies(movie12);
 
-        DataClass [] expected = {movie12,movie11,movie10,movie9,movie8};
-        DataClass [] actual = managerLimit.resultRevers();
+        DataClass[] expected = {
+                movie12,
+                movie11,
+                movie10,
+                movie9,
+                movie8,
+                movie7,
+                movie6,
+                movie5,
+                movie4,
+                movie3,
+                movie2,
+                movie1};
+        DataClass[] actual = managerLimit.resultRevers();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
-    public void shouldReversWithZero(){
+    public void shouldReversWithZero() {
         PosterManager managerLimit = new PosterManager(0);
         managerLimit.saveMovies(movie1);
         managerLimit.saveMovies(movie2);
@@ -60,14 +72,27 @@ public class PosterManagerLimitTest {
         managerLimit.saveMovies(movie11);
         managerLimit.saveMovies(movie12);
 
-        DataClass [] expected = {movie12,movie11,movie10,movie9,movie8};
-        DataClass [] actual = managerLimit.resultRevers();
+        DataClass[] expected = {
+                movie12,
+                movie11,
+                movie10,
+                movie9,
+                movie8,
+                movie7,
+                movie6,
+                movie5,
+                movie4,
+                movie3,
+                movie2,
+                movie1};
+        DataClass[] actual = managerLimit.resultRevers();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
-    public void shouldReversWithMin(){
+    public void shouldReversWithMin() {
         PosterManager managerLimit = new PosterManager(1);
         managerLimit.saveMovies(movie1);
         managerLimit.saveMovies(movie2);
@@ -82,14 +107,15 @@ public class PosterManagerLimitTest {
         managerLimit.saveMovies(movie11);
         managerLimit.saveMovies(movie12);
 
-        DataClass [] expected = {movie12};
-        DataClass [] actual = managerLimit.resultRevers();
+        DataClass[] expected = {movie12};
+        DataClass[] actual = managerLimit.resultRevers();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
-    public void shouldReversMax(){
+    public void shouldReversMax() {
         PosterManager managerLimit = new PosterManager(12);
         managerLimit.saveMovies(movie1);
         managerLimit.saveMovies(movie2);
@@ -104,7 +130,8 @@ public class PosterManagerLimitTest {
         managerLimit.saveMovies(movie11);
         managerLimit.saveMovies(movie12);
 
-        DataClass [] expected = {movie12,
+        DataClass[] expected = {
+                movie12,
                 movie11,
                 movie10,
                 movie9,
@@ -116,13 +143,14 @@ public class PosterManagerLimitTest {
                 movie3,
                 movie2,
                 movie1};
-        DataClass [] actual = managerLimit.resultRevers();
+        DataClass[] actual = managerLimit.resultRevers();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
-    public void shoulReversOverLimit(){
+    public void shoulReversOverLimit() {
         PosterManager managerLimit = new PosterManager(13);
         managerLimit.saveMovies(movie1);
         managerLimit.saveMovies(movie2);
@@ -137,10 +165,22 @@ public class PosterManagerLimitTest {
         managerLimit.saveMovies(movie11);
         managerLimit.saveMovies(movie12);
 
-        DataClass [] expected = {movie12,movie11,movie10,movie9,movie8};
-        DataClass [] actual = managerLimit.resultRevers();
+        DataClass[] expected = {
+                movie12,
+                movie11,
+                movie10,
+                movie9,
+                movie8,
+                movie7,
+                movie6,
+                movie5,
+                movie4,
+                movie3,
+                movie2,
+                movie1};
+        DataClass[] actual = managerLimit.resultRevers();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
 

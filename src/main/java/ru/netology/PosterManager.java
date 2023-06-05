@@ -11,7 +11,9 @@ public class PosterManager {
     public PosterManager(int limit) {
         this.limit = limit;
     }
+
     public PosterManager() {
+        this.limit = 5;
     }
 
     public int getLimit() {
@@ -40,10 +42,10 @@ public class PosterManager {
     private DataClass[] reversArray() { // массив в обратном порядке
         int resultLenght = limit;
         if (limit > poster.length) {
-            resultLenght = 5;
+            resultLenght = poster.length;
         }
         if (limit <= 0) {
-            resultLenght = 5;
+            resultLenght = poster.length;
         }
         DataClass[] all = findAll();
         DataClass[] reverse = new DataClass[resultLenght];
