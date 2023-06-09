@@ -5,7 +5,7 @@ public class DataClass {
     private String genre = "";
     private String release = "";
 
-    public DataClass (String name, String genre, String release) {
+    public DataClass(String name, String genre, String release) {
         this.name = name;
         this.genre = genre;
         this.release = release;

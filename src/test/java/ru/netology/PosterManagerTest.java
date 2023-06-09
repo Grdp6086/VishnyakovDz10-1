@@ -66,7 +66,7 @@ public class PosterManagerTest {
 
 
         DataClass[] expected = {movie12, movie11, movie10, movie9, movie8};
-        DataClass[] actual = manager.resultRevers();
+        DataClass[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 

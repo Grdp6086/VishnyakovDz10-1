@@ -50,7 +50,7 @@ public class PosterManagerLimitTest {
                 movie3,
                 movie2,
                 movie1};
-        DataClass[] actual = managerLimit.resultRevers();
+        DataClass[] actual = managerLimit.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -85,7 +85,7 @@ public class PosterManagerLimitTest {
                 movie3,
                 movie2,
                 movie1};
-        DataClass[] actual = managerLimit.resultRevers();
+        DataClass[] actual = managerLimit.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -108,7 +108,7 @@ public class PosterManagerLimitTest {
         managerLimit.saveMovies(movie12);
 
         DataClass[] expected = {movie12};
-        DataClass[] actual = managerLimit.resultRevers();
+        DataClass[] actual = managerLimit.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -143,7 +143,7 @@ public class PosterManagerLimitTest {
                 movie3,
                 movie2,
                 movie1};
-        DataClass[] actual = managerLimit.resultRevers();
+        DataClass[] actual = managerLimit.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -178,7 +178,7 @@ public class PosterManagerLimitTest {
                 movie3,
                 movie2,
                 movie1};
-        DataClass[] actual = managerLimit.resultRevers();
+        DataClass[] actual = managerLimit.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
 

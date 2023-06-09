@@ -39,7 +39,7 @@ public class PosterManager {
 
     }
 
-    private DataClass[] reversArray() { // массив в обратном порядке
+    public DataClass[] findLast() { // массив в обратном порядке
         int resultLenght = limit;
         if (limit > poster.length) {
             resultLenght = poster.length;
@@ -55,8 +55,5 @@ public class PosterManager {
         return reverse;
     }
 
-    public DataClass[] resultRevers() {
-        return reversArray();
-    }
 
 }
